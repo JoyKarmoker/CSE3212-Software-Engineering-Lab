@@ -1,0 +1,113 @@
+A popular clothing brand have multiple outlet store and an online store front. They would like to develop a web- based software to operate their outlets and their online store. Here are the basic customer requirements:
+. Customer can filter the product searching according to size, gender, age-group, price-range, etc. 
+. Customer can view current stock availability of a specific product and size at the outlet stores. 
+. Registered customers will receive rewards for shopping.
+. Registered customer can receive their order delivery from the outlet stores without paying any shipping fees.
+. All customers have to pay shipping fees to receive home delivery of their order.
+. Customers can exchange their product within 15 days of purchase from any outlet store. 
+. Customers can view and pre-order upcoming products.
+. Customers can request an out-of-stock product in a specific size.
+. The company may offer limited-time-sale on some products.
+• The outlets store keepers will receive rewards based on the sale volume.
+
+Give me all the entitites, their atrbitues and relations for er diagram.
+
+
+
+Prepare basic process flow, UML diagram and ER diagram for the proposed software.
+
+
+Entities:
+1. Customer
+2. Product
+3. Outlet Store
+4. Order
+5. Reward
+6. Size
+7. Sale
+8. Pre-order
+10. Stock
+11. Salesman
+
+Attributes:
+Customer:
+- Customer ID (Primary Key)
+- Name
+- Address
+- Email
+- Phone Number
+
+Product:
+- Product ID (Primary Key)
+- Name
+- Description
+- Price
+- Quantity
+- Size ID (Composite Primary Key)
+- Gender
+- Age Group
+
+Outlet Store:
+- Store ID (Primary Key)
+- Name
+- Location
+
+Order:
+- Order ID (Primary Key)
+- Customer ID (Foreign Key)
+- Quantity
+- Order Date
+- Delivery Date
+- Shipping Fee
+- Status
+
+Order Item:
+- Order_id (FK)
+- Product_id(FK)
+- Size_id(FK)
+- Quantity
+
+Reward:
+- Reward ID (Primary Key)
+- Customer ID (Foreign Key)
+- Reward Points
+
+Size:
+- Size ID (Primary Key)
+- Size Name
+
+Sale:
+- Sale ID (Primary Key)
+- Product ID (Foreign Key)
+- Discount Percentage
+- Start Date
+- End Date
+
+Pre-order:
+- Pre-order ID (Primary Key)
+- Customer ID (Foreign Key)
+- Product ID (Foreign Key)
+- Size ID (Foreign Key)
+- Quantity
+- Pre-order Date
+
+
+Stock:
+- Store_ID
+- Product_Id
+- Size_ID
+- Quantity
+
+Relations:
+- Customer and Order: One customer can place multiple orders. (One-to-Many)
+- Customer and Reward: One customer can have multiple rewards. (One-to-Many)
+- Customer and Outlet Store: Customers can receive deliveries from outlet stores. (Many-to-Many)
+- Customer and Pre-order: Customers can pre-order upcoming products. (Many-to-Many)
+- Outlet Store and Product: Outlet stores have stock availability for specific products. (Many-to-Many)
+- Product and Size: Products can have different sizes. (One-to-Many)
+- Product and Sale: Some products can be offered at a limited-time sale. (One-to-Many)
+- Outlet Store and Sale: Outlet store keepers receive rewards based on sales volume during a sale. (One-to-Many)
+- Order and Order Item: One Order can have multiple product, muliple size (One to many)
+- Order Item and product: Many to One
+
+These are alternative suggestions that may fit the requirements differently. The specific design would depend on the specific needs and constraints of the system.
